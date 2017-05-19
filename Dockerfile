@@ -12,3 +12,6 @@ RUN apt-get update  -y                                  && \
     apt-get install -y git                              && \
     git clone https://github.com/jihoonkim/r-base.git   && \
     bash r-base/provision.sh
+
+### change a working directory to /
+WORKDIR /

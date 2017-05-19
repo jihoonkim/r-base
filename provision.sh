@@ -4,8 +4,11 @@
 # Filename   : provision.sh
 # Author     : Jihoon Kim 
 # Email      : j5kim@ucsd.edu
-# Description: Install the most recent version of R
+# Description: Install the most recent version of base R on Ubuntu machine
 #-----------------------------------------------------------------------------
+
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
 # add key to sign CRAN pacakges
 # The Ubuntu archives on CRAN are signed with the key of 
 #  "Michael Rutter <marutter@gmail.com>" with key ID E084DAB9. 
@@ -27,9 +30,10 @@ apt-get install -y tzdata
 ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 
 # install dependant packages
-apt-get install -y apt-utils python-software-properties software-properties-common wget zip
+apt-get install -y apt-utils dialog python-software-properties software-properties-common wget zip
 
-# add specfic PPA
+# add specfic Personal Package Archive (PPA)
+#  by #  "Michael Rutter <marutter@gmail.com>" 
 add-apt-repository -y ppa:marutter/rdev
 
 # update
