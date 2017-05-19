@@ -7,8 +7,6 @@
 # Description: Install the most recent version of base R on Ubuntu machine
 #-----------------------------------------------------------------------------
 
-echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-
 # add key to sign CRAN pacakges
 # The Ubuntu archives on CRAN are signed with the key of 
 #  "Michael Rutter <marutter@gmail.com>" with key ID E084DAB9. 
